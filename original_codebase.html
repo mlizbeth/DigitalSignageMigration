@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="http://uc.trinity.edu/risevision/sidebar.css">
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+		<title></title>
+	</head>
+
+	<body onload="floorplansShow();showKey();" style="width:1920px;height:1080px; margin: 0; overflow: hidden;background:url('http://commondatastorage.googleapis.com/risemedialibrary-4ac5439c-344e-4aa3-ae6d-3dfc7f0df6f4/tower-duotone-1920x1080.jpg') no-repeat left top;background-size:contain;" ><div  id="Welcome" placeholder="true" style="width:1600px;height:90px;left:160px;top:47px;z-index:1;position:absolute;"></div>
+	<div  id="Floorplans" placeholder="true" style="width:947px;height:867px;left:513px;top:161px;z-index:0;position:absolute;"></div>
+	<div  id="Calendar" placeholder="true" style="width:1501px;height:745px;left:345px;top:211px;z-index:3;position:absolute;"></div>
+		
+	<div id="sidebar" style="position:absolute;top:380px;left:30px;">
+		<ul>
+			<a href="#" id="Calendar-btn" onclick="calendarShow();hideKey()"><li class="green">Calendar</li></a>
+			<a href="#" id="Directory-btn" onclick="directoryShow();hideKey()"><li class="purple">Directory</li></a>
+			<a href="#" id="Floorplans-btn" onclick="floorplansShow();showKey()"><li class="blue">Floorplans</li></a>
+			<!-- <a href="#" id="Conference-btn"><li class="gold">Conference<br />Information</li></a> -->
+		</ul>    
+	</div>
+		<script src="http://uc.trinity.edu/risevision/northrup-hall.js"></script>
+	<div  id="Directory" placeholder="true" style="width:1550px;height:864px;left:315px;top:177px;z-index:2;position:absolute;background:rgba(255,255,255,1);"></div><div id="key" placeholder="true" style="width:210px;height:274px;left:1582px;top:699px;z-index:4;position:absolute;"></div>
+	</body>
+  
+    <script language="javascript">
+    function showKey() {
+      $("#key").show();
+    }
+    
+    function hideKey() {
+      $("#key").hide();
+    }
+  </script>
+
+<!-- Warning - Editing the Presentation Data Object incorrectly may result in the Presentation not functioning correctly -->
+	<script language='javascript'>
+	<!--
+	var presentationData = {
+	"presentationData": {
+		"id": "35d1a8ff-3ec3-4edb-aea3-926b47c78bff",
+		"hidePointer": false,
+		"donePlaceholder": "Floorplans",
+		"placeholders": [
+			{
+				"id": "Floorplans",
+				"type": "playlist",
+				"timeDefined": false,
+				"startDate": "06/12/14 3:55 PM",
+				"endDate": null,
+				"startTime": null,
+				"endTime": null,
+				"recurrenceType": "Daily",
+				"recurrenceFrequency": "1",
+				"recurrenceAbsolute": true,
+				"recurrenceDayOfWeek": "0",
+				"recurrenceDayOfMonth": "1",
+				"recurrenceWeekOfMonth": "0",
+				"recurrenceMonthOfYear": "0",
+				"visibility": true,
+				"transition": "none",
+				"items": [
+					{
+						"name": "Image Widget",
+						"duration": "10",
+						"type": "widget",
+						"objectReference": "5233a598-35ce-41a4-805c-fd2147f144a3",
+						"index": null,
+						"playUntilDone": false,
+						"objectData": "http://s3.amazonaws.com/widget-image/0.1.1/dist/widget.html",
+						"additionalParams": "{\"selector\":{\"selection\":\"single-folder\",\"storageName\":\"madeline-ds/new/\",\"url\":\"https://www.googleapis.com/storage/v1/b/risemedialibrary-4ac5439c-344e-4aa3-ae6d-3dfc7f0df6f4/o?prefix=madeline-ds%2Fnew%2F\"},\"storage\":{\"companyId\":\"4ac5439c-344e-4aa3-ae6d-3dfc7f0df6f4\",\"folder\":\"madeline-ds/new/\",\"fileName\":\"\"},\"resume\":false,\"scaleToFit\":true,\"position\":\"middle-center\",\"duration\":\"60\",\"pause\":\"60\",\"autoHide\":false,\"url\":\"\",\"background\":{}}",
+						"timeDefined": false,
+						"startDate": null,
+						"endDate": null,
+						"startTime": null,
+						"endTime": null,
+						"recurrenceType": "Daily",
+						"recurrenceFrequency": "1",
+						"recurrenceAbsolute": true,
+						"recurrenceDayOfWeek": "0",
+						"recurrenceDayOfMonth": "1",
+						"recurrenceWeekOfMonth": "0",
+						"recurrenceMonthOfYear": "0"
+					}
+				]
+			},
+			{
+				"id": "Welcome",
+				"type": "playlist",
+				"timeDefined": false,
+				"startDate": "04/04/14 11:53 AM",
+				"endDate": null,
+				"startTime": null,
+				"endTime": null,
+				"recurrenceType": "Daily",
+				"recurrenceFrequency": "1",
+				"recurrenceAbsolute": true,
+				"recurrenceDayOfWeek": "0",
+				"recurrenceDayOfMonth": "1",
+				"recurrenceWeekOfMonth": "0",
+				"recurrenceMonthOfYear": "0",
+				"visibility": true,
+				"transition": "none",
+				"items": [
+					{
+						"name": "Text Item",
+						"duration": "10",
+						"type": "text",
+						"objectReference": null,
+						"index": null,
+						"playUntilDone": false,
+						"objectData": "\n\t<link href=\"http://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700\" rel=\"stylesheet\" type=\"text/css\">\n\t\n<div style=\"text-align: center;\"><span style=\"font-family: 'Roboto', sans-serif; color: rgb(255, 255, 255); font-size: -webkit-xxx-large;\">Welcome to Trinity University</span></div>\n\t\n\t\n",
+						"additionalParams": null,
+						"timeDefined": false,
+						"startDate": null,
+						"endDate": null,
+						"startTime": null,
+						"endTime": null,
+						"recurrenceType": "Daily",
+						"recurrenceFrequency": "1",
+						"recurrenceAbsolute": true,
+						"recurrenceDayOfWeek": "0",
+						"recurrenceDayOfMonth": "1",
+						"recurrenceWeekOfMonth": "0",
+						"recurrenceMonthOfYear": "0"
+					}
+				]
+			},
+			{
+				"id": "Directory",
+				"type": "playlist",
+				"timeDefined": false,
+				"startDate": "04/04/14 11:40 AM",
+				"endDate": null,
+				"startTime": null,
+				"endTime": null,
+				"recurrenceType": "Daily",
+				"recurrenceFrequency": "1",
+				"recurrenceAbsolute": true,
+				"recurrenceDayOfWeek": "0",
+				"recurrenceDayOfMonth": "1",
+				"recurrenceWeekOfMonth": "0",
+				"recurrenceMonthOfYear": "0",
+				"visibility": true,
+				"transition": "none",
+				"items": [
+					{
+						"name": "Google Spreadsheet Widget v 2.0.0",
+						"duration": "10",
+						"type": "widget",
+						"objectReference": "3132a345-9246-49df-854f-16455b833abf",
+						"index": null,
+						"playUntilDone": false,
+						"objectData": "http://s3.amazonaws.com/widget-google-spreadsheet/2.0.0/dist/widget.html",
+						"additionalParams": "{\"format\":{\"body\":{\"fontStyle\":{\"font\":{\"family\":\"arial,helvetica,sans-serif\",\"type\":\"standard\",\"url\":\"\"},\"size\":\"14px\",\"customSize\":\"\",\"align\":\"left\",\"verticalAlign\":\"middle\",\"bold\":false,\"italic\":false,\"underline\":false,\"forecolor\":\"black\",\"backcolor\":\"transparent\"}},\"columns\":[],\"evenRowColor\":\"rgba(243,243,243)\",\"header\":{\"fontStyle\":{\"font\":{\"family\":\"arial,helvetica,sans-serif\",\"type\":\"standard\",\"url\":\"\"},\"size\":\"18px\",\"customSize\":\"\",\"align\":\"left\",\"verticalAlign\":\"middle\",\"bold\":false,\"italic\":false,\"underline\":false,\"forecolor\":\"black\",\"backcolor\":\"transparent\"}},\"oddRowColor\":\"rgba(238,238,238)\",\"rowHeight\":40,\"separator\":{\"color\":\"rgba(238,238,238, 1)\",\"showColumn\":false,\"showRow\":true}},\"scroll\":{\"by\":\"continuous\",\"direction\":\"up\",\"speed\":\"medium\",\"pause\":5,\"pud\":10},\"spreadsheet\":{\"selection\":\"drive\",\"docName\":\"Library New 8-31-18\",\"url\":\"https://docs.google.com/a/trinity.edu/spreadsheets/d/1ngMKK6xwg5ZcfnHJ2DUdrHrEe6zf2umYaaEswlbYGcQ/edit?usp=drive_web\",\"fileId\":\"1ngMKK6xwg5ZcfnHJ2DUdrHrEe6zf2umYaaEswlbYGcQ\",\"cells\":\"sheet\",\"range\":{\"startCell\":\"\",\"endCell\":\"\"},\"sheetName\":\"Sheet1\",\"hasHeader\":true,\"refresh\":60,\"apiKey\":\"\"}}",
+						"timeDefined": false,
+						"startDate": null,
+						"endDate": null,
+						"startTime": null,
+						"endTime": null,
+						"recurrenceType": "Daily",
+						"recurrenceFrequency": "1",
+						"recurrenceAbsolute": true,
+						"recurrenceDayOfWeek": "0",
+						"recurrenceDayOfMonth": "1",
+						"recurrenceWeekOfMonth": "0",
+						"recurrenceMonthOfYear": "0"
+					}
+				]
+			},
+			{
+				"id": "Calendar",
+				"type": "playlist",
+				"timeDefined": false,
+				"startDate": "06/12/14 4:18 PM",
+				"endDate": null,
+				"startTime": null,
+				"endTime": null,
+				"recurrenceType": "Daily",
+				"recurrenceFrequency": "1",
+				"recurrenceAbsolute": true,
+				"recurrenceDayOfWeek": "0",
+				"recurrenceDayOfMonth": "1",
+				"recurrenceWeekOfMonth": "0",
+				"recurrenceMonthOfYear": "0",
+				"visibility": true,
+				"transition": "none",
+				"items": [
+					{
+						"name": "HTML Widget",
+						"duration": "10",
+						"type": "widget",
+						"objectReference": "c187c76a-c85b-4bd9-91fa-6f2748c8189c",
+						"index": null,
+						"playUntilDone": false,
+						"objectData": "http://s3.amazonaws.com/widget-html/0.1.0/dist/widget.html",
+						"additionalParams": "{\"html\":\"<!DOCTYPE html>\\n<script type=\\\"text/javascript\\\"\\nsrc=\\\"https://events.trinity.edu/widget/view?schools=trinity&days=31&num=10&html_descriptions=1&template=modern\\\"></script><div id=\\\"lclst_widget_footer\\\"><a rel=\\\"nofollow\\\" style=\\\"margin-left:auto;margin-right:auto;display:block;width:81px;margin-top:10px;\\\" title=\\\"Widget powered by Localist Online Calendar Software\\\" href=\\\"http://www.localist.com?utm_source=widget&utm_campaign=widget_footer&utm_medium=branded%20link\\\"></a></div>\\n\\n<style>\\n\\n.action_button{\\n    display:none;\\n}\\n\\t\\n.localist_widget_container span.lw_event_item_date {\\n    background-color: rgba(0, 0, 0, 0.75);\\n\\t}\\n\\t\\n.localist_widget_container a.lw_event_item_image{\\n\\t\\t\\n\\tposition: relative!important;\\n    top: 20px;\\n\\tmargin-bottom: 20px;\\n\\t}\\n\\n.localist_widget_container li.lw_event_item {\\n\\nwidth: 1500px;\\npadding: 5px;\\n}\\n\\n\\ndiv.lw_event_item_title{\\nfont-size:20px;\\n\\n}\\n\\n.localist_widget_container{\\n\\nbackground-color:transparent;\\n\\n}\\n\\nul#lwe a {\\n\\n\\n\\n    pointer-events:none;\\n\\n    text-decoration:none;\\n\\n    color:black;\\n\\n    text-weight:bold;\\n\\n    font-size:24px;\\n\\n   font-family: \\\"roboto\\\", Helvetica, Arial, sans-serif;\\n\\n\\n\\n    \\n\\n}\\n\\n\\np{\\ncolor: black;\\nfont-size:16px;\\nline-height:25px;\\n}\\n\\n\\nul#lwe{\\n\\n\\n\\n    background-color:#723130;\\n\\n\\n\\n}\\n\\n\\n\\n\\n\\nspan.lwn0 {\\n\\n\\n\\n    color:black;\\n\\n    font-size:16px;\\n\\n    font-family: \\\"roboto-light\\\", Helvetica, Arial, sans-serif;\\n\\n}\\n\\n\\nspan.lwl0 {\\ncolor: black;\\nfont-size: 16px;\\n}\\n\\n.lwn {\\n\\n\\n    font-weight: bold;\\n\\n\\n    line-height: 19px;\\n\\n\\n    overflow: -webkit-paged-x;\\n\\n}\\n\\n.localist_widget_container li.lw_event_item:nth-child(even){\\n\\tbackground: white;\\n\\t\\n}\\n\\n.localist_widget_container span.lw_event_item_date{\\nfont-size:15px;\\nfont-weight:bold;\\ndisplay:block;\\n}\\n\\t\\n\\tli.lw.lw_event_item{\\n\\t\\tpadding:15px;\\n\\t}\\n\\n.localist_widget_container a.lw_event_item_image img{\\npointer-events:none;\\n}\\n\\n\\n</style>\\n</body>\\n</html>\"}",
+						"timeDefined": false,
+						"startDate": null,
+						"endDate": null,
+						"startTime": null,
+						"endTime": null,
+						"recurrenceType": "Daily",
+						"recurrenceFrequency": "1",
+						"recurrenceAbsolute": true,
+						"recurrenceDayOfWeek": "0",
+						"recurrenceDayOfMonth": "1",
+						"recurrenceWeekOfMonth": "0",
+						"recurrenceMonthOfYear": "0"
+					}
+				]
+			},
+			{
+				"id": "key",
+				"type": "playlist",
+				"timeDefined": false,
+				"startDate": null,
+				"endDate": null,
+				"startTime": null,
+				"endTime": null,
+				"recurrenceType": "Daily",
+				"recurrenceFrequency": "1",
+				"recurrenceAbsolute": true,
+				"recurrenceDayOfWeek": "0",
+				"recurrenceDayOfMonth": "1",
+				"recurrenceWeekOfMonth": "0",
+				"recurrenceMonthOfYear": "0",
+				"visibility": true,
+				"transition": "none",
+				"items": [
+					{
+						"name": "Key2.png",
+						"duration": "10",
+						"type": "widget",
+						"objectReference": "5233a598-35ce-41a4-805c-fd2147f144a3",
+						"index": null,
+						"playUntilDone": false,
+						"objectData": "http://s3.amazonaws.com/widget-image/0.1.1/dist/widget.html",
+						"additionalParams": "{\"selector\":{\"selection\":\"single-file\",\"storageName\":\"madeline-ds/Key2.png\",\"url\":\"https://storage.googleapis.com/risemedialibrary-4ac5439c-344e-4aa3-ae6d-3dfc7f0df6f4/madeline-ds%2FKey2.png\"},\"storage\":{\"companyId\":\"4ac5439c-344e-4aa3-ae6d-3dfc7f0df6f4\",\"fileName\":\"Key2.png\",\"folder\":\"madeline-ds/\"},\"resume\":true,\"scaleToFit\":true,\"position\":\"middle-center\",\"duration\":10,\"pause\":10,\"autoHide\":false,\"url\":\"\",\"background\":{}}",
+						"timeDefined": false,
+						"startDate": null,
+						"endDate": null,
+						"startTime": null,
+						"endTime": null,
+						"recurrenceType": "Daily",
+						"recurrenceFrequency": "1",
+						"recurrenceAbsolute": true,
+						"recurrenceDayOfWeek": "0",
+						"recurrenceDayOfMonth": "1",
+						"recurrenceWeekOfMonth": "0",
+						"recurrenceMonthOfYear": "0"
+					}
+				]
+			}
+		]
+	}
+};
+	//-->
+	</script>
+<!-- No scripts after this point -->
+</html>
