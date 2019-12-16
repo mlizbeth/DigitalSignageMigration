@@ -1,0 +1,84 @@
+body, html {
+    background-color: transparent;
+}
+
+.action_button {
+    display: none;
+}
+
+.localist_widget_container span.lw_event_item_date {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.localist_widget_container a.lw_event_item_image {
+    position: relative !important;
+    top: 20px;
+    margin-bottom: 20px;
+}
+
+.localist_widget_container li.lw_event_item {
+    width: 1500px;
+    padding: 5px;
+}
+
+div.lw_event_item_title {
+    font-size: 20px;
+}
+
+.localist_widget_container {
+    background-color: transparent;
+}
+
+ul#lwe a {
+    pointer-events: none;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "roboto", Helvetica, Arial, sans-serif;
+}
+
+p {
+    color: black;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+ul#lwe {
+    color: black;
+    font-size: 16px;
+    font-family: "roboto-light", Helvetica, Arial, sans-serif;
+}
+
+span.lw10 {
+    color: black;
+    font-size: 16px;
+}
+
+.lwn {
+    font-weight: bold;
+    line-height: 19px;
+    overflow: -webkit-paged-x;
+}
+
+.localist_widget_container li.lw_event_item:nth-child(even) {
+    background: white;
+}
+
+.localist_widget_container span.lw_event_item_date {
+    font-size: 15px;
+    font-weight: bold;
+    display: block;
+}
+
+li.lw.lw_event_item {
+    padding: 15px;
+}
+
+.localist_widget_container a.lw_event_item_image img {
+    pointer-events: none;
+}
+
+.table td {
+    text-align: center;
+}

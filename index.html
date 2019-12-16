@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+    <script src="http://uc.trinity.edu/risevision/northrup-hall.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="sidebar.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</head>
+</head>
+
+<body onload="floorplansShow();loadTable();" style="width:1920px;height:1080px; margin: 0; overflow: hidden;background:url('img/tower-duotone-1920x1080.jpg') no-repeat left top;background-size:contain;">
+    <div id="Calendar" placeholder="true" style="width:1525px;height:745px;left:345px;top:211px;z-index:3;position:absolute;overflow:auto;">
+        <script type="text/javascript" src="https://events.trinity.edu/widget/view?schools=trinity&days=31&num=10&html_descriptions=1&template=modern"></script>
+    </div>
+    <div id="sidebar" style="position:absolute;top:380px;left:30px;">
+        <ul>
+            <a href="#" id="Calendar-btn" onclick="calendarShow();hideKey()">
+                <li class="green">Calendar</li>
+            </a>
+            <a href="#" id="Directory-btn" onclick="directoryShow();hideKey();">
+                <li class="purple">Directory</li>
+            </a>
+            <a href="#" id="Floorplans-btn" onclick="floorplansShow();showKey()">
+                <li class="blue">Floorplans</li>
+            </a>
+        </ul>
+    </div>
+    <div id="Directory" placeholder="true" style="width:1000px;height:864px;left:615px;top:177px;z-index:2;position:absolute;background:rgba(255,255,255,1);overflow:auto;">
+        <table class="table header-fixed">
+            <thead>
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Room #</th>
+                    <th scope="col">Extension</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+    <script>
+    var data = "";
+    var dataEnd;
+    var dataBegin;
+    var dataSet = "";
+    var arr;
+    var tBody = $('#tableBody');
+
+    function loadTable() {
+        var url = "https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetID}/values:batchGet?majorDimension=ROWS&ranges=A1%3AF47&valueRenderOption=FORMATTED_VALUE&key={API_KEY}"
+
+        axios.get(url)
+            .then(function(response) {
+
+                data = JSON.stringify(response);
+                dataEnd = data.lastIndexOf("]}]");
+                dataBegin = data.indexOf("[[\"");
+                dataSet = data.substring(dataBegin + 1, dataEnd);
+
+                arr = JSON.parse("[" + dataSet + "]");
+
+                for (var x = 1; x < arr.length; x++) {
+                    var row = arr[x];
+                    var newRow = $('<tr></tr>').appendTo(tBody);
+                    for (var y = 0; y < row.length; y++) {
+                        newRow.append('<td>' + row[y] + '</td>');
+                    }
+                }
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+
+    }
+    </script>
+</body>
+
+</html>
