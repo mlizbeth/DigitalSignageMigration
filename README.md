@@ -1,2 +1,2 @@
-# DigitalSignageMigration
- Migrating our digital signage off of Rise Vision due to the new pricing changes. We had use their classic editor, so this document is recreated in pure HTML/JS/CSS
+# Digital Signage Migration
+ The purpose of the project is to migrate our digital signage off of Rise Vision due to the new pricing changes as well as the software being generally unstable on Raspberry Pi. The presentation was originally created with their classic editor, so I have written this recreation as faithful to the original as I could. I did have to get creative with the way the directory is populated, as our source is a Google Spreadsheet.
