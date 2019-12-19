@@ -6,6 +6,10 @@ body, html {
     display: none;
 }
 
+.localist_widget_wrapper {
+    padding-right: 10px;
+}
+
 .localist_widget_container span.lw_event_item_date {
     background-color: rgba(0, 0, 0, 0.75);
 }
@@ -18,7 +22,7 @@ body, html {
 
 .localist_widget_container li.lw_event_item {
     width: 1500px;
-    padding: 5px;
+    /*padding: 5px;*/
 }
 
 div.lw_event_item_title {
@@ -26,7 +30,7 @@ div.lw_event_item_title {
 }
 
 .localist_widget_container {
-    background-color: transparent;
+    background-color: transparent !important; 
 }
 
 ul#lwe a {
@@ -63,6 +67,10 @@ span.lw10 {
 
 .localist_widget_container li.lw_event_item:nth-child(even) {
     background: white;
+}
+
+.localist_widget_container lw.lw_event_item {
+    padding-left: 15px;
 }
 
 .localist_widget_container span.lw_event_item_date {
