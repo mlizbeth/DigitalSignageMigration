@@ -95,3 +95,13 @@ li.lw.lw_event_item {
 .localist_widget_container li.lw_event_item:first-of-type {
     margin: 0 !important;
 }
+
+.carousel-control-prev {
+    left: -75px !important;
+    padding-top: 175px !important;
+}
+
+.carousel-control-next {
+    right: -75px !important; 
+    padding-top: 175px !important;
+}
