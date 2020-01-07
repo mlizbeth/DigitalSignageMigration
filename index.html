@@ -23,7 +23,7 @@
     </div>
     <div id="sidebar" style="position:absolute;top:380px;left:30px;">
         <ul>
-            <a href="#" id="Calendar-btn" onclick="calendarShow();hideKey();">
+            <a href="#" id="Calendar-btn" onclick="calendarShow();hideKey();removeLinks();">
                 <li class="green">Calendar</li>
             </a>
             <a href="#" id="Directory-btn" onclick="directoryShow();hideKey();">
@@ -84,6 +84,11 @@
 
     function hideKey() {
         $("#key").hide();
+    }
+
+    function removeLinks() {
+        var links = document.querySelectorAll("#Calendar a"), x;
+        for (x = 0; x < links.length; ++x) { links[x].setAttribute('href', "#"); }
     }
     </script>
     <script>
