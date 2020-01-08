@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+    <script src="http://uc.trinity.edu/risevision/northrup-hall.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/sidebar.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body onload="floorplansShow();loadTable();" style="width:1920px;height:1080px; margin: 0; overflow: hidden;background:url('img/tower-duotone-1920x1080.jpg') no-repeat left top;background-size:contain;">
+    <div id="Welcome" style="padding-top:15px;">
+        <h1 class="text-center text-white font-weight-bold">Welcome to Trinity University</h1>
+    </div>
+    <div id="Calendar" placeholder="true" style="width:1525px;height:745px;left:345px;top:211px;z-index:3;position:absolute;overflow:auto;">
+        <script type="text/javascript" src="https://events.trinity.edu/widget/view?schools=trinity&days=31&num=10&html_descriptions=1&template=modern"></script>
+    </div>
+    <div id="sidebar" style="position:absolute;top:380px;left:30px;">
+        <ul>
+            <a href="#" id="Calendar-btn" onclick="calendarShow();removeLinks();">
+                <li class="green">Calendar</li>
+            </a>
+            <a href="#" id="Directory-btn" onclick="directoryShow();">
+                <li class="purple">Directory</li>
+            </a>
+            <a href="#" id="Floorplans-btn" onclick="floorplansShow();">
+                <li class="blue">Floorplans</li>
+            </a>
+        </ul>
+    </div>
+    <div id="Directory" style="width:1200px;height:864px;left:615px;top:177px;z-index:2;position:absolute;background:rgba(255,255,255,1);overflow:auto;">
+        <table class="table header-fixed">
+            <thead align="center">
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Room #</th>
+                    <th scope="col">Extension</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+    <div id="Floorplans" style="width:1250px;height:1025px;left:400px;top:161px;z-index:1;position:absolute;">
+        <img src="img/csi.png" class="img-fluid">
+    </div>
+    <script>
+    function removeLinks() {
+        var links = document.querySelectorAll("#Calendar a"),
+            x;
+        for (x = 0; x < links.length; ++x) { links[x].setAttribute('href', "#"); }
+    }
+    </script>
+    <script>
+    var data = "";
+    var dataEnd;
+    var dataBegin;
+    var dataSet = "";
+    var arr;
+    var tBody = $('#tableBody');
+
+    function loadTable() {
+        var url = "https://sheets.googleapis.com/v4/spreadsheets/{SHEET_ID}/values:batchGet?majorDimension=ROWS&ranges=A1%3AF78&valueRenderOption=FORMATTED_VALUE&key={API_KEY}"
+
+        axios.get(url)
+            .then(function(response) {
+
+                data = JSON.stringify(response);
+                dataEnd = data.lastIndexOf("]}]");
+                dataBegin = data.indexOf("[[\"");
+                dataSet = data.substring(dataBegin + 1, dataEnd);
+
+                arr = JSON.parse("[" + dataSet + "]");
+
+                for (var x = 1; x < arr.length; x++) {
+                    var row = arr[x];
+                    var newRow = $('<tr></tr>').appendTo(tBody);
+                    for (var y = 0; y < row.length; y++) {
+                        newRow.append('<td>' + row[y] + '</td>');
+                    }
+                }
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+
+    }
+    </script>
+</body>
+
+</html>
